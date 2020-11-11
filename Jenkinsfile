@@ -2,9 +2,7 @@
 
 pipeline {
     agent any
-    triggers {
 
-  }
     environment {
         default_branch = 'master'
     }
