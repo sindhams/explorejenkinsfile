@@ -2,6 +2,9 @@
 
 pipeline {
     agent any
+    triggers {
+    pollSCM('* * * * *')
+  }
 
     environment {
         default_branch = 'master'
@@ -12,8 +15,8 @@ pipeline {
             gitCheckout(
                 branch: "${default_branch}",
                 url: "https://github.com/sindhams/quickstart-microsoft-sql.git",
-                changelog: "true",
-                poll: "true"
+                changelog: "false",
+                poll: "false"
             )
             }
     }
