@@ -2,6 +2,9 @@
 
 pipeline {
     agent any
+    triggers {
+    pollSCM('* * * * *')
+  }
     environment {
         default_branch = 'master'
     }
@@ -16,6 +19,4 @@ pipeline {
     }
     }
 }
-triggers {
-    pollSCM('* * * * *')
-  }
+
