@@ -3,7 +3,7 @@
 pipeline {
     agent any
     environment {
-        default_branch = 'main'
+        default_branch = 'wavefront'
     }
     stages {
         stage('Git Checkout') {
