@@ -1,4 +1,4 @@
-@Library('jenkins-library@master') _
+
 
 pipeline {
     agent any
@@ -12,12 +12,12 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-            gitCheckout(
-                branch: "${default_branch}",
-                url: "https://github.com/sindhams/quickstart-microsoft-sql.git",
-                changelog: "false",
-                poll: "false"
-            )
+checkout([$class: 'GitSCM',
+          branches: [[name: '*/master']],
+          userRemoteConfigs: [[url: 'https://github.com/sindhams/quickstart-microsoft-sql.git']]
+          changelog: false,
+          poll: false
+])
             }
     }
     }
