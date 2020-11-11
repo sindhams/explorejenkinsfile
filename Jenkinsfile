@@ -13,7 +13,7 @@ pipeline {
             steps {
             gitCheckout(
                 branch: "${default_branch}",
-                url: "https://github.com/sindhams/quickstart-microsoft-sql.git"
+                url: "https://github.com/sindhams/quickstart-microsoft-sql.git",
                 changelog: "false",
                 poll: "false"
             )
