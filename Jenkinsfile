@@ -2,11 +2,14 @@
 
 pipeline {
     agent any
+    environment {
+        default_branch = 'main'
+    }
     stages {
         stage('Git Checkout') {
             steps {
             gitCheckout(
-                branch: "main",
+                branch: ${default_branch},
                 url: "https://github.com/spring-projects/spring-petclinic.git"
             )
             }
