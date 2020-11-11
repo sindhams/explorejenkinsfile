@@ -3,16 +3,19 @@
 pipeline {
     agent any
     environment {
-        default_branch = 'wavefront'
+        default_branch = 'master'
     }
     stages {
         stage('Git Checkout') {
             steps {
             gitCheckout(
                 branch: "${default_branch}",
-                url: "https://github.com/spring-projects/spring-petclinic.git"
+                url: "https://github.com/sindhams/quickstart-microsoft-sql.git"
             )
             }
     }
     }
 }
+triggers {
+    pollSCM('* * * * *')
+  }
