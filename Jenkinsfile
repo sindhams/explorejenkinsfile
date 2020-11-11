@@ -14,7 +14,7 @@ pipeline {
             steps {
 checkout([$class: 'GitSCM',
           branches: [[name: '*/master']],
-          userRemoteConfigs: [[url: 'https://github.com/sindhams/quickstart-microsoft-sql.git']]
+          userRemoteConfigs: [[url: 'https://github.com/sindhams/quickstart-microsoft-sql.git']],
           changelog: false,
           poll: false
 ])
